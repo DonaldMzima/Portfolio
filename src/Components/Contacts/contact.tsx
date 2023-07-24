@@ -5,8 +5,17 @@ import * as Yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hooks-useform'
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
-import { FaInstagram, FaTwitter } from 'react-icons/fa'
+import { FaInstagram, FaPhone, FaTwitter } from 'react-icons/fa'
+import { HiOutlineMail } from 'react-icons/hi'
+import styled from '@emotion/styled'
+
 import ContactSvg from '../Svg/ContactSvg'
+
+const Title = styled.h1`
+  color: #a7a2a2;
+  font-size: 34px;
+  text-align: center;
+`
 
 const schema = Yup.object({
   name: Yup.string().required('enter your name'),
@@ -63,12 +72,13 @@ const ContactForm = () => {
     // })
   }
   return (
-    <div id="contact" className="w-full items-center ">
-      <h1 className=" text-center text-gray-500 xl:text-center text-xl ">
-        Contact Me
-      </h1>
-      {submitting && <div>Form submitted</div>}
-      <div className="relative flex h-screen w-full items-center justify-center">
+    <div
+      id="contact"
+      className="w-full flex items-center justify-center flex-col lg:flex-row"
+    >
+      <Title>Contact Me</Title>
+      <div className="w-full max-w-xs">
+        {submitting && <div>Form submitted</div>}
         <form
           className="bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-xs"
           onSubmit={Submit}
@@ -132,7 +142,7 @@ const ContactForm = () => {
           </div>
         </form>
       </div>
-      <div className="flex flex-col items-left justify-left mt-10">
+      <div className="flex flex-col items-center mt-10 lg:ml-10">
         <ContactSvg />
         {/* Social media platforms */}
         <div className="flex gap-4 mt-4">
@@ -152,22 +162,19 @@ const ContactForm = () => {
           >
             <AiFillGithub size={24} />
           </a>
-          {/* Add other social media platforms */}
+
           <a
-            href="https://twitter.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:donaldmzima8@gmail.com"
             className="text-gray-500 hover:text-blue-500"
           >
-            <FaTwitter size={24} />
+            <HiOutlineMail size={24} />
           </a>
+          {/* Add phone number link */}
           <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="tel:+0789941731"
             className="text-gray-500 hover:text-blue-500"
           >
-            <FaInstagram size={24} />
+            <FaPhone size={24} />
           </a>
         </div>
       </div>
