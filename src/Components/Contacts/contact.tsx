@@ -76,11 +76,9 @@ const ContactForm = () => {
       id="contact"
       className="w-full flex items-center justify-center flex-col lg:flex-row"
     >
+     
       <div className="w-full max-w-xs">
-        <Title>Contact Me</Title>
-        <br />
-        <br />
-        <br />
+      <Title>Contact Me</Title>
         {submitting && <div>Form submitted</div>}
         <form
           className="bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-xs"
@@ -177,7 +175,7 @@ const ContactForm = () => {
             href="tel:+0789941731"
             className="text-gray-500 hover:text-blue-500"
           >
-            <FaPhone size={21} />
+            <FaPhone size={24} />
           </a>
         </div>
       </div>
