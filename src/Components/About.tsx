@@ -17,14 +17,14 @@ const SkillContainer = styled.div`
 `
 
 const Title = styled.h1`
-  color: #a7a2a2;
+  color: black;
   font-size: 34px;
   text-align: center;
 `
 
 const About = () => {
   return (
-    <div id="about" className="bg-gray-900  ">
+    <div id="about">
       <Title> About Me</Title>
       {/* <div className="bg-gray-900 h-screen w-full flex items-center justify-center"> */}
       <SkillContainer>

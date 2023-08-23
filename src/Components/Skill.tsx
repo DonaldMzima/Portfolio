@@ -11,7 +11,7 @@ const SkillContainer = styled.div`
 `
 
 const Title = styled.h1`
-  color: #333;
+  color: white;
   font-size: 34px;
   text-align: center;
 `

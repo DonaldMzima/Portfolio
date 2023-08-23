@@ -12,23 +12,23 @@ export default function Home() {
       <div>
         <Navbar />
       </div>
-      <div>
+      <div className="sm:px-4 md:px-8 lg:px-16 bg-gray-800">
         <Intro />
       </div>
-      <div>
+      <div className="sm:px-4 md:px-8 lg:px-16 bg-gray-300">
         <About />
       </div>
-      <div>
+      <div className="sm:px-4 md:px-8 lg:px-16 bg-gray-800">
         <Skill />
       </div>
-      <div>
+      <div className="sm:px-4 md:px-8 lg:px-16 bg-gray-300">
         <Project />
       </div>
 
-      <div>
+      <div className="sm:px-4 md:px-8 lg:px-16 bg-gray-800">
         <ContactForm />
       </div>
-      <div>
+      <div className="sm:px-4 md:px-8 lg:px-16 bg-gray-800">
         <Footer />
       </div>
     </>

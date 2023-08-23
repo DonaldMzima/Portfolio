@@ -11,7 +11,7 @@ const Intro = () => {
   return (
     <div className="relative flex h-screen w-full items-center justify-center ">
       <div className="max-w-screen-lg px-4 lg:px-0">
-        <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm">
+        <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-300 p-6 text-center shadow-lg backdrop-blur-sm">
           <h2 className="text-4xl font-bold text-white sm:text-5xl lg:text-7xl"></h2>
 
           <h2 className="flex text-4xl gap-x-4 text-neutral-100">
