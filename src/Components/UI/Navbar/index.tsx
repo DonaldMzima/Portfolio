@@ -48,9 +48,9 @@ const Navbar = () => {
               </svg>
             </button>
           </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start text-2xl font-semibold whitespace-nowrap dark:text-white">
-            <div className="flex flex-shrink-0 text-gray-500 items-center">
-              <h1>Donald Mzima</h1>
+          <div className="flex flex-1  sm:items-stretch md:justify-start text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <div className="flex flex-shrink-0 text-gray-500 i justify-start ">
+              <h1 className="justify-start">Donald Mzima</h1>
             </div>
             <div className={`sm:ml-6 sm:block ${isOpen ? 'block' : 'hidden'}`}>
               <div className="space-x-4 flex flex-1 items-center justify-center">

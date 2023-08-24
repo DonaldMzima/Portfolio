@@ -1,5 +1,4 @@
 import React from 'react'
-
 import styled from '@emotion/styled'
 
 const SkillContainer = styled.div`
@@ -23,6 +22,11 @@ const SkillList = styled.ul`
   display: grid; /* Use CSS Grid for the layout */
   grid-template-columns: repeat(4, 1fr); /* Create 5 equal columns */
   grid-gap: 20px; /* Add some gap between the columns */
+
+  @media (max-width: 768px) {
+    /* Adjust the number of columns for mobile screens */
+    grid-template-columns: repeat(2, 1fr);
+  }
 `
 
 const SkillItem = styled.li`
@@ -35,8 +39,14 @@ const SkillItem = styled.li`
 
 const SkillImage = styled.img`
   width: 150px;
-  height: 150x;
+  height: 150px; /* Fixed height for images */
   margin-right: 8px;
+
+  @media (max-width: 768px) {
+    /* Adjust image size for mobile screens */
+    width: 100px;
+    height: 100px;
+  }
 `
 
 const Skill = () => {
