@@ -1,5 +1,5 @@
 import React from 'react'
-import { BiDownload } from 'react-icons/bi'
+import { RiFileTextFill } from 'react-icons/ri'
 
 const ResumeButton = () => {
   const iconSize = 40
@@ -11,7 +11,7 @@ const ResumeButton = () => {
       // download="Stoman-Resume.pdf"
       // href="/files/Stoman-Resume.pdf"
     >
-      <BiDownload size={iconSize} />
+      <RiFileTextFill size={iconSize} />
     </a>
   )
 }
