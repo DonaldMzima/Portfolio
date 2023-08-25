@@ -2,10 +2,11 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 const Title = styled.h1`
-  color: black;
+  color: #312e2e;
   font-size: 34px;
   text-align: center;
   margin-top: 0px;
+  text-decoration: underline;
 `
 
 const myProjects = [
