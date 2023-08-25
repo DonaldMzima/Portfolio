@@ -6,27 +6,23 @@ import { HiOutlineMail, HiOutlineUserCircle } from 'react-icons/hi'
 import ContactSvg from '../Svg/ContactSvg'
 
 const Title = styled.h1`
-  color: white;
+  color: #cfcbcb;
   font-size: 34px;
   text-align: center;
   margin-top: 0px;
+  text-decoration: underline;
 `
 
 const ContactForm = () => {
   return (
-    <div className="py-10">
+    <div id="contact" className="py-10">
       <Title>Contact Me</Title>
       <div className="py-10">
         <div className="flex flex-col md:flex-row justify-center items-center">
           {/* SVG and icons */}
           <div className="w-full md:w-1/2 md:pr-5">
-            <div className="space-y-4 text-left">
-              <a
-                className="text-gray-600 text-lg hover:text-blue-500"
-                href="mailto:donaldmzima8@gmail.com"
-              >
-                <FaEnvelope className="ml-1" />
-              </a>
+            <div className="space-y-4 text-left text-2xl text-gray-300 font-xl ">
+              <h1>Keep In Touch</h1>
 
               <ContactSvg />
               {/* Social media platforms */}
@@ -69,7 +65,7 @@ const ContactForm = () => {
             <form>
               <div className="space-y-4">
                 <div>
-                  <label className="block">Full Name</label>
+                  <label className="block text-gray-500">Full Name</label>
                   <input
                     className="w-full p-2 border rounded"
                     type="text"
@@ -77,7 +73,7 @@ const ContactForm = () => {
                   />
                 </div>
                 <div>
-                  <label className="block">Email Address</label>
+                  <label className="block text-gray-500">Email Address</label>
                   <input
                     className="w-full p-2 border rounded"
                     type="email"
@@ -85,7 +81,7 @@ const ContactForm = () => {
                   />
                 </div>
                 <div>
-                  <label className="block">Phone Number</label>
+                  <label className="block text-gray-500">Phone Number</label>
                   <input
                     className="w-full p-2 border rounded"
                     type="tel"
@@ -93,7 +89,7 @@ const ContactForm = () => {
                   />
                 </div>
                 <div>
-                  <label className="block">Your Message</label>
+                  <label className="block text-gray-500">Your Message</label>
                   <textarea className="w-full p-2 border rounded"></textarea>
                 </div>
                 <div className="flex items-center justify-between">

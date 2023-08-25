@@ -6,50 +6,88 @@ const SkillContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
 `
 
 const Title = styled.h1`
-  color: white;
+  color: #cfcbcb;
   font-size: 34px;
   text-align: center;
+  text-decoration: underline;
+`
+
+const CardList = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px; /* Increased margin to create more space */
+  max-width: 900px;
+  width: 100%;
+  flex-wrap: wrap;
+`
+
+const Card = styled.div`
+  background-color: #2b2d42;
+  color: #cfcbcb;
+  padding: 20px;
+  border-radius: 8px;
+  width: calc(33.33% - 20px); /* Adjusted width and margin to create space */
+  text-align: center;
+  margin-bottom: 20px;
 `
 
 const SkillList = styled.ul`
   list-style: none;
   padding: 0;
-  margin-top: 20px;
-  display: grid; /* Use CSS Grid for the layout */
-  grid-template-columns: repeat(4, 1fr); /* Create 5 equal columns */
-  grid-gap: 20px; /* Add some gap between the columns */
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 20px;
 
   @media (max-width: 768px) {
-    /* Adjust the number of columns for mobile screens */
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 `
 
 const SkillItem = styled.li`
-  color: #666;
-  font-size: 18px;
-  margin-bottom: 10px;
+  color: #cfcbcb;
+  font-size: 'font-bold';
   display: flex;
+  flex-direction: column;
   align-items: center;
 `
 
 const SkillImage = styled.img`
-  width: 150px;
-  height: 150px; /* Fixed height for images */
-  margin-right: 8px;
+  width: 110px;
+  height: 110px;
+  margin-bottom: 8px;
 
   @media (max-width: 768px) {
-    /* Adjust image size for mobile screens */
     width: 100px;
     height: 100px;
   }
 `
 
 const Skill = () => {
+  const skills = [
+    {
+      src: '/images/spaceX api.jpg',
+
+      title:
+        'Developing blazing fast web applications for seamless user interaction.',
+    },
+    {
+      src: '/images/icon.jpg',
+
+      title:
+        'Mobile-first, responsive design layout for all devices is a top priority.',
+    },
+    {
+      src: '/images/icon.jpg',
+
+      title:
+        'Constantly learning new technologies and keeping up to date with the lastest software development trends.',
+    },
+  ]
+
   const frontendSkills = [
     { name: 'HTML', image: '/images/html5.png' },
     { name: 'CSS', image: '/images/css.png' },
@@ -65,11 +103,19 @@ const Skill = () => {
     <div id="skills">
       <Title>Skills</Title>
       <SkillContainer>
+        <CardList>
+          {skills.map((card, index) => (
+            <Card key={index}>
+              <img src={card.src} alt={`Card ${index}`} />
+              <p>{card.title}</p>
+            </Card>
+          ))}
+        </CardList>
         <SkillList>
           {frontendSkills.map((skill, index) => (
             <SkillItem key={index}>
               <SkillImage src={skill.image} alt={skill.name} />
-              {skill.name}
+              <span>{skill.name}</span>
             </SkillItem>
           ))}
         </SkillList>
