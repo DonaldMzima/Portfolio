@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react'
 
-const AutoWriteText = ({ titles, speed }: any) => {
+interface AutoWriteTextProps {
+  titles: string[]
+  speed: number
+}
+
+const AutoWriteText: React.FC<AutoWriteTextProps> = ({ titles, speed }) => {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0)
   const [currentTitle, setCurrentTitle] = useState('')
   const [currentIndex, setCurrentIndex] = useState(0)
