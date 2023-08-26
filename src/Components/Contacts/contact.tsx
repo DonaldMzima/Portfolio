@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 import styled from '@emotion/styled'
-import { FaWhatsapp, FaPhone, FaEnvelope } from 'react-icons/fa'
-import { HiOutlineMail, HiOutlineUserCircle } from 'react-icons/hi'
+import { FaPhone } from 'react-icons/fa'
+import { HiOutlineMail } from 'react-icons/hi'
 import ContactSvg from '../Svg/ContactSvg'
+import emailjs from '@emailjs/browser'
+import { toast } from 'react-toastify'
+import * as Yup from 'yup'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useForm } from 'react-hooks-useform'
 
 const Title = styled.h1`
   color: #cfcbcb;
@@ -14,6 +19,54 @@ const Title = styled.h1`
 `
 
 const ContactForm = () => {
+  const [submitting, setSubmitting] = useState(false)
+
+  const Submit = (event: any) => {
+    event.preventDefault()
+    setSubmitting(true)
+    emailjs
+
+      .sendForm(
+        'service_9l68yag',
+        'template_6ey4pkw',
+
+        event.target,
+        'wcEzEMeePpQMJBII6',
+      )
+      .then(
+        (result) => {
+          console.log(result.text)
+        },
+        (error) => {
+          console.log(error.text)
+          toast.error('Message Not Send :-(', {
+            position: toast.POSITION.TOP_RIGHT,
+          })
+        },
+      )
+
+    toast.success('Message Send :-)', {
+      position: toast.POSITION.TOP_RIGHT,
+    })
+
+    setTimeout(() => {
+      setSubmitting(false)
+    }, 1750)
+
+    // const {
+    //   register,
+    //   handleSubmit,
+    //   formState: { errors },
+    // } = useForm({
+    //   defaultValues: {
+    //     name: '',
+    //     email: '',
+    //     message: '',
+    //   },
+    //   resolver: yupResolver(schema),
+    // })
+  }
+
   return (
     <div id="contact" className="py-10">
       <Title>Contact Me</Title>
@@ -62,7 +115,8 @@ const ContactForm = () => {
           </div>
           {/* Contact Form */}
           <div className="w-full md:w-1/2 md:pl-5 mt-8 md:mt-0">
-            <form>
+            {submitting && <div>Form submitted</div>}
+            <form onSubmit={Submit}>
               <div className="space-y-4">
                 <div>
                   <label className="block text-gray-500">Full Name</label>
