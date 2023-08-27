@@ -25,3 +25,20 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* Add a hover effect to the card */
+.project-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* Style the Learn More button */
+.project-card .learn-more-button {
+  background-color: #3182ce;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-card:hover .learn-more-button {
+  background-color: #2a69ac;
+  color: white;
+}
