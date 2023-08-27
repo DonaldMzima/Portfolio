@@ -36,7 +36,7 @@ const Project = () => {
             {myProjects.map((project, index) => (
               <div
                 key={index}
-                className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 my-6"
+                className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 my-6 project-card"
               >
                 <div className="rounded bg-gray-900 shadow-md">
                   <img
@@ -51,7 +51,7 @@ const Project = () => {
                   <div className="px-6 pt-4 pb-2">
                     <a
                       href={project.link}
-                      className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                      className="inline-block learn-more-button font-bold py-2 px-4 rounded-full"
                     >
                       Learn More
                     </a>
