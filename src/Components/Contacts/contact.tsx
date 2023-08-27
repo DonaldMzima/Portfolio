@@ -8,7 +8,7 @@ import emailjs from '@emailjs/browser'
 import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useForm } from 'react-hooks-useform'
+import { useForm } from 'react-hook-form'
 
 const Title = styled.h1`
   color: #cfcbcb;
@@ -17,6 +17,12 @@ const Title = styled.h1`
   margin-top: 0px;
   text-decoration: underline;
 `
+const schema = Yup.object().shape({
+  fullName: Yup.string().required('Full Name is required'),
+  email: Yup.string().email('Invalid email').required('Email is required'),
+  phoneNumber: Yup.string().required('Phone Number is required'),
+  message: Yup.string().required('Message is required'),
+})
 
 const ContactForm = () => {
   const [submitting, setSubmitting] = useState(false)
@@ -52,20 +58,20 @@ const ContactForm = () => {
     setTimeout(() => {
       setSubmitting(false)
     }, 1750)
-
-    // const {
-    //   register,
-    //   handleSubmit,
-    //   formState: { errors },
-    // } = useForm({
-    //   defaultValues: {
-    //     name: '',
-    //     email: '',
-    //     message: '',
-    //   },
-    //   resolver: yupResolver(schema),
-    // })
   }
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      fullName: '',
+      email: '',
+      phoneNumber: ' ',
+      message: '',
+    },
+    resolver: yupResolver(schema),
+  })
 
   return (
     <div id="contact" className="py-10">
@@ -115,8 +121,7 @@ const ContactForm = () => {
           </div>
           {/* Contact Form */}
           <div className="w-full md:w-1/2 md:pl-5 mt-8 md:mt-0">
-            {submitting && <div>Form submitted</div>}
-            <form onSubmit={Submit}>
+            <form onSubmit={handleSubmit(Submit)}>
               <div className="space-y-4">
                 <div>
                   <label className="block text-gray-500">Full Name</label>
@@ -124,7 +129,11 @@ const ContactForm = () => {
                     className="w-full p-2 border rounded"
                     type="text"
                     placeholder="Your full name"
+                    {...register('fullName')}
                   />
+                  {errors.fullName && (
+                    <p className="text-red-500">{errors.fullName.message}</p>
+                  )}
                 </div>
                 <div>
                   <label className="block text-gray-500">Email Address</label>
@@ -132,7 +141,11 @@ const ContactForm = () => {
                     className="w-full p-2 border rounded"
                     type="email"
                     placeholder="name@example.com"
+                    {...register('email')}
                   />
+                  {errors.email && (
+                    <p className="text-red-500">{errors.email.message}</p>
+                  )}
                 </div>
                 <div>
                   <label className="block text-gray-500">Phone Number</label>
@@ -140,19 +153,30 @@ const ContactForm = () => {
                     className="w-full p-2 border rounded"
                     type="tel"
                     placeholder="01XXX XXX XXX"
+                    {...register('phoneNumber')}
                   />
+                  {errors.phoneNumber && (
+                    <p className="text-red-500">{errors.phoneNumber.message}</p>
+                  )}
                 </div>
                 <div>
                   <label className="block text-gray-500">Your Message</label>
-                  <textarea className="w-full p-2 border rounded"></textarea>
+                  <textarea
+                    className="w-full p-2 border rounded"
+                    {...register('message')}
+                  ></textarea>
+                  {errors.message && (
+                    <p className="text-red-500">{errors.message.message}</p>
+                  )}
                 </div>
                 <div className="flex items-center justify-between">
                   <button
-                    aria-label="Submit contact form"
+                    // aria-label="Submit contact form"
                     className="w-max rounded-full border-2 border-blue-400 bg-stone-900 px-4 py-2 text-sm font-medium text-white shadow-md outline-none hover:bg-stone-800 focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800"
                     type="submit"
+                    disabled={submitting}
                   >
-                    Send Message
+                    {submitting ? 'Sending...' : 'Send Message'}
                   </button>
                 </div>
               </div>
