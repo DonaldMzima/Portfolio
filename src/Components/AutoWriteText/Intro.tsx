@@ -21,21 +21,28 @@ const Intro = () => {
           </h2>
 
           <div className="flex w-full justify-center gap-x-4">
-            <a href="https://www.facebook.com/" className="flex items-center">
+            <a
+              href="https://www.linkedin.com/"ref:update social media links
+              className="flex items-center hover:text-blue-500"
+            >
               <AiFillLinkedin size={iconSize} />
-              <span className="text-white ml-2">LinkedIn</span>
+              <span className="text-white ml-2 ">LinkedIn</span>
             </a>
 
             <a
               href="https://github.com/DonaldMzima"
-              className="flex items-center"
+              className="flex items-center hover:text-blue-500"
             >
               <AiFillGithub size={iconSize} />
               <span className="text-white ml-2">GitHub</span>
             </a>
-            <a className="flex items-center">
+
+            <a
+              href="#contact"
+              className="flex items-center hover:text-blue-500"
+            >
               <MdPhone size={iconSize} />
-              <span className="text-white ml-2">Contact</span>
+              <span className="text-white ml-2">Contacts</span>
             </a>
           </div>
         </div>

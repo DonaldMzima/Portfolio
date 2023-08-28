@@ -5,8 +5,8 @@ const ResumeButton = () => {
   const iconSize = 40
   return (
     <a
-      href="/ResumeFile/resume.pdf"
-      download="resume.pdf"
+      href="/ResumeFile/PDF_1682368837740 (2).PDF"
+      download="PDF_1682368837740 (2).PDF"
       className="flex justify-center"
       // download="Stoman-Resume.pdf"
       // href="/files/Stoman-Resume.pdf"
