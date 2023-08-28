@@ -20,6 +20,7 @@
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
     "emailjs": "^4.0.2",
+    "file-saver": "^2.0.5",
     "jest": "^29.6.1",
     "next": "13.4.12",
     "postcss": "8.4.27",
