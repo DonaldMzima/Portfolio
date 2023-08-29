@@ -12,7 +12,7 @@ const Title = styled.h1`
 const myProjects = [
   {
     src: '/images/spaceX api.jpg',
-    name: 'SpaceX API',
+    name: 'Music-Static-Site',
     title:
       'I created this project to dive into the exciting world of APIs and React. This project showcases my journey as I learned to pull data from the SpaceX API.',
     link: '/services',
@@ -51,7 +51,7 @@ const Project = () => {
                   <div className="px-6 pt-4 pb-2">
                     <a
                       href={project.link}
-                      className="inline-block learn-more-button font-bold py-2 px-4 rounded-full"
+                      className="inline-block learn-more-button font-bold py-2 px-2 rounded-full"
                     >
                       Learn More
                     </a>
