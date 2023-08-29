@@ -22,7 +22,7 @@ const Intro = () => {
 
           <div className="flex w-full justify-center gap-x-4">
             <a
-              href="https://www.linkedin.com/"ref:update social media links
+              href="https://www.linkedin.com/"
               className="flex items-center hover:text-blue-500"
             >
               <AiFillLinkedin size={iconSize} />
