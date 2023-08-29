@@ -30,9 +30,15 @@ const Card = styled.div`
   color: #cfcbcb;
   padding: 20px;
   border-radius: 8px;
-  width: calc(33.33% - 20px); /* Adjusted width and margin to create space */
+  width: calc(33.33% - 20px);
   text-align: center;
   margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-20px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
 `
 
 const SkillList = styled.ul`
@@ -69,20 +75,14 @@ const SkillImage = styled.img`
 const Skill = () => {
   const skills = [
     {
-      src: '/images/spaceX api.jpg',
-
       title:
         'Developing blazing fast web applications for seamless user interaction.',
     },
     {
-      src: '/images/icon.jpg',
-
       title:
         'Mobile-first, responsive design layout for all devices is a top priority.',
     },
     {
-      src: '/images/icon.jpg',
-
       title:
         'Constantly learning new technologies and keeping up to date with the lastest software development trends.',
     },
@@ -104,9 +104,8 @@ const Skill = () => {
       <Title>Skills</Title>
       <SkillContainer>
         <CardList>
-          {skills.map((card, index) => (
-            <Card key={index}>
-              <img src={card.src} alt={`Card ${index}`} />
+          {skills.map((card: any) => (
+            <Card key={card}>
               <p>{card.title}</p>
             </Card>
           ))}
