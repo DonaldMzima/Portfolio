@@ -11,17 +11,24 @@ const Title = styled.h1`
 
 const myProjects = [
   {
-    src: '/images/spaceX api.jpg',
-    name: 'Music-Static-Site',
-    title:
-      'I created this project to dive into the exciting world of APIs and React. This project showcases my journey as I learned to pull data from the SpaceX API.',
-    link: '/services',
-  },
-  {
     src: '/images/dogschedule.jpg',
     name: 'Dog Schedule',
     title:
       "I created this project to showcase my love for dogs and my skills in React. This project helps dog owners manage their pet's schedule effectively.",
+    link: '/services',
+  },
+  {
+    src: '/images/dogschedule.jpg',
+    name: 'SafaClean',
+    title:
+      "I created this project to showcase my love for dogs and my skills in React. This project helps dog owners manage their pet's schedule effectively.",
+    link: '/services',
+  },
+  {
+    src: '/images/spaceX api.jpg',
+    name: 'Music-Static-Site',
+    title:
+      'I created this project to dive into the exciting world of APIs and React. This project showcases my journey as I learned to pull data from the .',
     link: '/services',
   },
 ]
