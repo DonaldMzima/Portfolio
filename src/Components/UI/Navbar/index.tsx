@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-4 flex-1 items-center justify-center">
           <a
             href="#"
-            className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+            className="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
             aria-current="page"
           >
             Home
@@ -77,7 +77,7 @@ const Navbar = () => {
         <div className="md:hidden mt-2">
           <a
             href="#"
-            className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+            className="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
             aria-current="page"
           >
             Home
