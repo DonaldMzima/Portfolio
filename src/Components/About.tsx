@@ -2,6 +2,7 @@ import React from 'react'
 import AboutSvg from './Svg/AboutSvg'
 import styled from '@emotion/styled'
 import ResumeButton from './Buttons/ResumeButton'
+import ScrollToTopButton from './Buttons/ScrollToTopButton'
 
 const SkillContainer = styled.div`
   display: grid;
@@ -39,6 +40,7 @@ const ResumeTitle = styled.span`
 const About = () => {
   return (
     <div id="about">
+      <ScrollToTopButton />
       <Title> About Me</Title>
       <SkillContainer>
         <div className="md:w-1/2">
