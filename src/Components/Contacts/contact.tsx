@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
-import styled from '@emotion/styled'
 import { FaPhone } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
 import ContactSvg from '../Svg/ContactSvg'
@@ -9,21 +8,12 @@ import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
-
-const Title = styled.h1`
-  color: #cfcbcb;
-  font-size: 34px;
-  text-align: center;
-  margin-top: 0px;
-  text-decoration: underline;
-`
 const schema = Yup.object().shape({
   fullName: Yup.string().required('Full Name is required'),
   email: Yup.string().email('Invalid email').required('Email is required'),
   phoneNumber: Yup.string().required('Phone Number is required'),
   message: Yup.string().required('Message is required'),
 })
-
 const ContactForm = () => {
   const [submitting, setSubmitting] = useState(false)
 
@@ -75,7 +65,9 @@ const ContactForm = () => {
 
   return (
     <div id="contact" className="py-10">
-      <Title>Contact Me</Title>
+      <h1 className="text-center text-gray-300 text-3xl font-bold underline mb-10">
+        Contact Me
+      </h1>
       <div className="py-10">
         <div className="flex flex-col md:flex-row justify-center items-center">
           {/* SVG and icons */}
@@ -171,7 +163,6 @@ const ContactForm = () => {
                 </div>
                 <div className="flex items-center justify-between">
                   <button
-                    // aria-label="Submit contact form"
                     className="w-max rounded-full border-2 border-blue-400 bg-stone-900 px-4 py-2 text-sm font-medium text-white shadow-md outline-none hover:bg-stone-800 focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-stone-800"
                     type="submit"
                     disabled={submitting}
