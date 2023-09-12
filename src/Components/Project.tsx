@@ -1,13 +1,4 @@
 import React from 'react'
-import styled from '@emotion/styled'
-
-const Title = styled.h1`
-  color: #312e2e;
-  font-size: 34px;
-  text-align: center;
-  margin-top: 0px;
-  text-decoration: underline;
-`
 
 const myProjects = [
   {
@@ -37,7 +28,9 @@ const Project = () => {
   return (
     <div>
       <div id="project" className="w-full items-center">
-        <Title>My Project</Title>
+        <h1 className="text-gray-700 text-3xl text-center mt-0 underline">
+          My Project
+        </h1>
         <div className="relative flex flex-col items-center mt-10">
           <div className="flex flex-wrap justify-center items-center mx-2 sm:mx-0">
             {myProjects.map((project, index) => (
