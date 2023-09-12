@@ -1,12 +1,10 @@
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai'
-import ResumeButton from '../Buttons/ResumeButton'
-import AutoWriteText from './AutoWriteText'
 import { MdPhone } from 'react-icons/md'
 import ScrollToTopButton from '../Buttons/ScrollToTopButton'
 
 const Intro = () => {
-  const titles = ['Hi, I am Donald', 'A Frontend Developer']
-  const speed = 200 // milliseconds
+  // const titles = ['Hi, I am Donald', 'A Frontend Developer']
+  // const speed = 200 // milliseconds
   const iconSize = 40 // Set the desired icon size (you can change this value)
 
   return (

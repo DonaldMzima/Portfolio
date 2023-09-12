@@ -1,76 +1,21 @@
 import React from 'react'
-import styled from '@emotion/styled'
 
-const SkillContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-`
+const SkillContainer = 'flex flex-col items-center justify-center min-h-screen'
 
-const Title = styled.h1`
-  color: #cfcbcb;
-  font-size: 34px;
-  text-align: center;
-  text-decoration: underline;
-`
+const Title =
+  'text-xl md:text-2xl lg:text-3xl text-center text-blue-500 underline'
 
-const CardList = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 40px; /* Increased margin to create more space */
-  max-width: 900px;
-  width: 100%;
-  flex-wrap: wrap;
-`
+const CardList = 'flex justify-between mb-40 max-w-screen-lg w-full flex-wrap'
 
-const Card = styled.div`
-  background-color: #2b2d42;
-  color: #cfcbcb;
-  padding: 20px;
-  border-radius: 8px;
-  width: calc(33.33% - 20px);
-  text-align: center;
-  margin-bottom: 20px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+const Card =
+  'bg-gray-800 text-gray-300 p-4 rounded-lg w-1/3 md:w-1/4 lg:w-1/5 text-center mb-8 transition-transform transition-shadow hover:transform hover:-translate-y-4 hover:shadow-md'
 
-  &:hover {
-    transform: translateY(-20px);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-`
+const SkillList =
+  'grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8 list-none p-0'
 
-const SkillList = styled.ul`
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-gap: 20px;
+const SkillItem = 'text-gray-300 text-center'
 
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-`
-
-const SkillItem = styled.li`
-  color: #cfcbcb;
-  font-size: 'font-bold';
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
-const SkillImage = styled.img`
-  width: 110px;
-  height: 110px;
-  margin-bottom: 8px;
-
-  @media (max-width: 768px) {
-    width: 100px;
-    height: 100px;
-  }
-`
+const SkillImage = 'w-20 h-20 md:w-24 md:h-24 mb-2'
 
 const Skill = () => {
   const skills = [
@@ -84,7 +29,7 @@ const Skill = () => {
     },
     {
       title:
-        'Constantly learning new technologies and keeping up to date with the lastest software development trends.',
+        'Constantly learning new technologies and keeping up to date with the latest software development trends.',
     },
   ]
 
@@ -101,24 +46,24 @@ const Skill = () => {
 
   return (
     <div id="skills">
-      <Title>Skills</Title>
-      <SkillContainer>
-        <CardList>
-          {skills.map((card: any) => (
-            <Card key={card}>
+      <h1 className={Title}>Skills</h1>
+      <div className={SkillContainer}>
+        <div className={CardList}>
+          {skills.map((card, index) => (
+            <div key={index} className={Card}>
               <p>{card.title}</p>
-            </Card>
+            </div>
           ))}
-        </CardList>
-        <SkillList>
+        </div>
+        <ul className={SkillList}>
           {frontendSkills.map((skill, index) => (
-            <SkillItem key={index}>
-              <SkillImage src={skill.image} alt={skill.name} />
+            <li key={index} className={SkillItem}>
+              <img src={skill.image} alt={skill.name} className={SkillImage} />
               <span>{skill.name}</span>
-            </SkillItem>
+            </li>
           ))}
-        </SkillList>
-      </SkillContainer>
+        </ul>
+      </div>
     </div>
   )
 }
